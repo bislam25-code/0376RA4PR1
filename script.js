@@ -28,7 +28,7 @@ let h = document.querySelector("#titol-principal");
 
         // 6
 
-        let botoafegir = document.querySelector("#boto-afegir");
+        let botoafegir = document.querySelector("#llista-compra");
             botoafegir.addEventListener("click", function() {
             alert("Hola, no t'oblidis de menjar!");
         });
@@ -36,7 +36,7 @@ let h = document.querySelector("#titol-principal");
         // 7
 
         
-        let llistaCompra = document.querySelector("#llista-compra");
+        let llistaCompra = document.querySelector("#boto-afegir");
             let nouli = document.createElement("li");
                 nouli.textContent = "Tomaquet";
                 llistaCompra.appendChild(nouli);

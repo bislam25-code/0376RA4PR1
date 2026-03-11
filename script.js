@@ -28,18 +28,23 @@ let h = document.querySelector("#titol-principal");
 
         // 6
 
-        let botoafegir = document.querySelector("#llista-compra");
-            botoafegir.addEventListener("click", function() {
+        let botoalerta = document.querySelector("#boto-alerta");
+            botoalerta.addEventListener("click", function() {
             alert("Hola, no t'oblidis de menjar!");
         });
         
         // 7
 
         
-        let llistaCompra = document.querySelector("#boto-afegir");
-            let nouli = document.createElement("li");
-                nouli.textContent = "Tomaquet";
-                llistaCompra.appendChild(nouli);
+        let llista = document.querySelector("#llista-compra");
+        let botoafegir = document.querySelector("#boto-afegir");
+
+        botoafegir.addEventListener("click", function() {
+            let crearli = document.createElement ("li");
+            crearli.textContent = "Tomaquet" ;
+            llista.appendChild(crearli);
+        });
+    
 
         
         // 8

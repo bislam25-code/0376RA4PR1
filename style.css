@@ -1,0 +1,255 @@
+:root {
+  --bg: #f5f2eb;
+  --surface: #ffffff;
+  --border: #c8c2b4;
+  --text: #1a1714;
+  --text-muted: #7a7368;
+  --accent: #d4380d;
+  --accent-soft: #fff0ec;
+  --gold: #e8a000;
+  --gold-soft: #fff8e1;
+  --green: #2d7a4f;
+  --green-soft: #edf7f1;
+  --shadow: 4px 4px 0px #c8c2b4;
+  --radius: 4px;
+  --font-head: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* === Reset & Base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 40px 24px;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+  transition: background 0.4s ease, color 0.4s ease;
+
+  /* Subtle grid paper texture */
+  background-image:
+    linear-gradient(rgba(180,170,155,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180,170,155,0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* === Typography === */
+h1#titol-principal {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 36px;
+  line-height: 1.15;
+  color: var(--text);
+  position: relative;
+  padding-left: 16px;
+}
+
+h1#titol-principal::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+h3 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+small {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* === Caixa (Card) === */
+.caixa {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.caixa:hover {
+  box-shadow: 6px 6px 0px #b8b2a4;
+  transform: translate(-1px, -1px);
+}
+
+/* Numbered label for each card */
+.caixa::before {
+  content: counter(card);
+  counter-increment: card;
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--surface);
+  background: var(--text-muted);
+  padding: 1px 7px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+body {
+  counter-reset: card;
+}
+
+/* === Active Class === */
+.actiu {
+  background-color: var(--gold-soft) !important;
+  font-weight: 600;
+  border-color: var(--gold) !important;
+  color: #6b4c00;
+  border-left: 4px solid var(--gold);
+  padding-left: 12px;
+  transition: all 0.25s ease;
+}
+
+/* === Dark Mode === */
+.dark-mode {
+  --bg: #111210;
+  --surface: #1c1e1b;
+  --border: #333530;
+  --text: #e8e5df;
+  --text-muted: #7a7870;
+  --shadow: 4px 4px 0px #0a0a09;
+}
+
+/* === Image === */
+img {
+  display: block;
+  margin-top: 12px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* === Buttons === */
+button {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  margin-top: 12px;
+  background: var(--text);
+  color: var(--surface);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 3px 3px 0px var(--text-muted);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+  background: var(--accent);
+  box-shadow: 3px 3px 0px #8b2000;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--text-muted);
+}
+
+/* === List === */
+ul#llista-compra {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+ul#llista-compra li {
+  font-size: 0.9rem;
+  padding: 6px 0 6px 20px;
+  border-bottom: 1px dashed var(--border);
+  position: relative;
+  transition: background 0.15s ease;
+}
+
+ul#llista-compra li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+ul#llista-compra li:last-child {
+  border-bottom: none;
+}
+
+/* New items added dynamically */
+ul#llista-compra li:not(:nth-child(-n+2)) {
+  background: var(--green-soft);
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* === Delete Element === */
+#element-eliminar {
+  background: var(--accent-soft);
+  border: 1.5px dashed var(--accent);
+  color: var(--accent);
+  padding: 14px;
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+#element-eliminar:hover {
+  background: var(--accent);
+  color: white;
+  letter-spacing: 0.25em;
+}
+
+/* === Caixa Estil (click target) === */
+#caixa-estil {
+  transition: background-color 0.4s ease, box-shadow 0.2s ease;
+}
+
+/* === Scrollbar (optional nice touch) === */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }

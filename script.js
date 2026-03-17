@@ -53,4 +53,4 @@ let h = document.querySelector("#titol-principal");
             elementeliminar.addEventListener("click", function(){
                 let borram = elementeliminar.parentNode;
                 borram.removeChild(elementeliminar);
-            })
+        })

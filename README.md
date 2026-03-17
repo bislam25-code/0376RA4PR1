@@ -1,3 +1,3 @@
 # 0376RA4PR1
 
-Aixo es el el readme, llegeix-me quan vol!
+# Exercicis de DOM - 0373 RAEx7 

@@ -16,15 +16,14 @@ Cada exercici treballa una funcionalitat diferent de l'API del DOM.
 ## Estructura del projecte
 ```
 0376RA4PR1/
-├── index.html on tinc tot el text
-├── style.css  Aqui els diferents estils i colors
-├── script.js  El script per a quan toco els botons
-└── README.md  Aquest document
+    index.html on tinc tot el text
+     style.css  Aqui els diferents estils i colors
+     script.js  El script per a quan toco els botons
+     README.md  Aquest document conté la explicació del treball
+     
 ```
 
----
-
-## Exercicis i solucions
+### Exercicis i explicacions
 
 ### Exercici 1 — Canviar el color del títol
 
@@ -121,8 +120,7 @@ elementeliminar.addEventListener("click", function() {
 });
 ```
 
----
-
+--- 
 ## Que he fet per executar el projecte
 
 1. He posat el meu nom 
@@ -136,7 +134,7 @@ elementeliminar.addEventListener("click", function() {
 ```bash
 git clone https://github.com/bislam25-code/0376RA4PR1.git
 
-```
+
 4. Poso el branch
     git branch -M main
 
